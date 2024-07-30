@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
+  - Pot
+  - Healthy
+  - Trash
+  - Rotten
   layers:
   - Default
   - TransparentFX
@@ -11,7 +16,7 @@ TagManager:
   - Interactable
   - Water
   - UI
-  - 
+  - sprites
   - 
   - 
   - 
