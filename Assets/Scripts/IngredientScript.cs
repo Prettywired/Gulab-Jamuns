@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -40,7 +41,6 @@ public class IngredientScript : MonoBehaviour
         {
             Vector2 currPos = positions[moveIndex];
             transform.position = Vector2.MoveTowards(transform.position, currPos, speed * Time.deltaTime);
-            Debug.Log(transform.position);
 
 
             float distance = Vector2.Distance(currPos, transform.position);
@@ -57,10 +57,11 @@ public class IngredientScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other.tag);
         this.gameObject.SetActive(false);
-        if (other.CompareTag("Rotten") || other.CompareTag("Healthy"))
+        if (other.CompareTag("Rotten") || other.CompareTag("Healthy") || other.CompareTag("Obstacle"))
         {
-            TwoIngCond.stars--;
+            //TwoIngCond.stars--;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
