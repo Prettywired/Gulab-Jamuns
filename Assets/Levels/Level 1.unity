@@ -362,11 +362,17 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1362d37cd3e4a9e4ebb7c586af31cd3c, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9208837562690784973, guid: 1890cc18a0a06af41956185667d75dc0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1890cc18a0a06af41956185667d75dc0, type: 3}
 --- !u!4 &1152674264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9208837562690784974, guid: 1890cc18a0a06af41956185667d75dc0, type: 3}
+  m_PrefabInstance: {fileID: 1152674263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1152674265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9208837562690784972, guid: 1890cc18a0a06af41956185667d75dc0, type: 3}
   m_PrefabInstance: {fileID: 1152674263}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2024590376
@@ -407,12 +413,43 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9208837562690784961, guid: 1890cc18a0a06af41956185667d75dc0, type: 3}
   m_PrefabInstance: {fileID: 1152674263}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1152674265}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f494e7b58bd9b6e44866f8396d0c1e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &2115622203
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152674265}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0, y: -1.61}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.07226794, y: 2.0495763}
+      - {x: -0.10442375, y: 2.0597847}
+      - {x: -0.24235032, y: 1.6330507}
+      - {x: -0.23923032, y: 1.1253468}
+      - {x: 0.1883983, y: 1.1253468}
+      - {x: 0.18493427, y: 1.6145332}
 --- !u!1001 &1643080476177908789
 PrefabInstance:
   m_ObjectHideFlags: 0
