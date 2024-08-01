@@ -5,18 +5,49 @@ using UnityEngine.SceneManagement;
 
 public class Condition : MonoBehaviour
 {
+    [SerializeField] GameObject oneStar;
+    [SerializeField] GameObject twoStar;
+    [SerializeField] GameObject threeStar;
     [SerializeField] GameObject sprites;
-    int stars = 3;
+    public Stars stars;
     public GameObject obj;
     [SerializeField] DestinationTrigger dest;
 
     void Update()
     {
-        // Debug.Log("condition" + dest.GetSuccess());
+
         if (dest.GetSuccess())
         {
+            ShowStars();
+
             sprites.SetActive(false);
             obj.SetActive(true);
+        }
+    }
+    void ShowStars()
+    {
+        int number = stars.GetStars();
+        if (number > 1)
+        {
+            if (number == 3)
+            {
+                threeStar.SetActive(true);
+                twoStar.SetActive(false);
+                oneStar.SetActive(false);
+
+            }
+            else
+            {
+                threeStar.SetActive(false);
+                twoStar.SetActive(true);
+                oneStar.SetActive(false);
+            }
+        }
+        else
+        {
+            threeStar.SetActive(false);
+            twoStar.SetActive(false);
+            oneStar.SetActive(true);
         }
     }
 

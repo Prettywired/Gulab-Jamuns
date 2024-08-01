@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DestinationTrigger : MonoBehaviour
 {
+    public Stars stars;
     bool isSuccess = false;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -19,7 +20,7 @@ public class DestinationTrigger : MonoBehaviour
             }
             else
             {
-
+                stars.IncrementMistakes();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
@@ -32,6 +33,7 @@ public class DestinationTrigger : MonoBehaviour
             }
             else
             {
+                stars.IncrementMistakes();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }

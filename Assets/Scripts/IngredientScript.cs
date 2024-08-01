@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class IngredientScript : MonoBehaviour
 {
+    public Stars stars;
     public DrawLine line;
     Vector3[] positions;
     bool startMove = false; //this to check if line is drawing rn or not
@@ -59,9 +60,9 @@ public class IngredientScript : MonoBehaviour
     {
         Debug.Log(other.tag);
         this.gameObject.SetActive(false);
-        if (other.CompareTag("Rotten") || other.CompareTag("Healthy") || other.CompareTag("Obstacle"))
+        if (this.CompareTag("Healthy")&&other.CompareTag("Rotten") ||  other.CompareTag("Obstacle"))
         {
-            //TwoIngCond.stars--;
+            stars.IncrementMistakes();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

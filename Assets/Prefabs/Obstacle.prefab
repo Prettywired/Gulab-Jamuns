@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6834440690752643905}
-  - component: {fileID: 6834440690752643904}
+  - component: {fileID: 2179568720584345476}
   m_Layer: 0
   m_Name: Obstacle
   m_TagString: Obstacle
@@ -33,8 +33,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &6834440690752643904
-CircleCollider2D:
+--- !u!60 &2179568720584345476
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -46,9 +46,25 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09, y: 1.11}
-  serializedVersion: 2
-  m_Radius: 0.24
+  m_Offset: {x: -0.13, y: 0.81}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.06308739, y: 0.46375722}
+      - {x: -0.2008071, y: 0.43424946}
+      - {x: -0.1444394, y: 0.22790474}
+      - {x: 0.005867839, y: 0.11947566}
+      - {x: 0.2608533, y: 0.30327553}
+      - {x: 0.25821704, y: 0.34447187}
+      - {x: 0.23456413, y: 0.363092}
 --- !u!1 &6834440691958556565
 GameObject:
   m_ObjectHideFlags: 0
