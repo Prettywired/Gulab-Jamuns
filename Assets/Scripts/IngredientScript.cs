@@ -7,12 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class IngredientScript : MonoBehaviour
 {
+    float delay = 2f;
     public Stars stars;
     public DrawLine line;
     Vector3[] positions;
     bool startMove = false; //this to check if line is drawing rn or not
     int moveIndex = 0;
-    float speed = 10f;
+    float speed = 5f;
     void OnMouseDown()
     {
         line.StartLine(transform.position);
@@ -59,6 +60,12 @@ public class IngredientScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.tag);
+        StartCoroutine(HandleTriggerEvent(other));
+
+    }
+    IEnumerator HandleTriggerEvent(Collider2D other)
+    {
+        yield return new WaitForSeconds(delay);
         this.gameObject.SetActive(false);
         if (this.CompareTag("Healthy") && other.CompareTag("Rotten") || other.CompareTag("Obstacle"))
         {
@@ -67,5 +74,6 @@ public class IngredientScript : MonoBehaviour
             stars.IncrementMistakes();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
     }
 }

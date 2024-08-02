@@ -8,7 +8,7 @@ public class DestinationTrigger : MonoBehaviour
 {
     public Stars stars;
     bool isSuccess = false;
-
+    float delay = 2f;
     void OnTriggerEnter2D(Collider2D other)
     {
         if (this.CompareTag("Pot"))
@@ -20,9 +20,8 @@ public class DestinationTrigger : MonoBehaviour
             }
             else
             {
-                Debug.Log(this.tag);
-                stars.IncrementMistakes();
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                StartCoroutine(handleNegativeCase());
+
             }
         }
         else if (this.CompareTag("Trash"))
@@ -34,13 +33,16 @@ public class DestinationTrigger : MonoBehaviour
             }
             else
             {
-                Debug.Log(this.tag);
-                stars.IncrementMistakes();
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                StartCoroutine(handleNegativeCase());
             }
         }
     }
-
+    IEnumerator handleNegativeCase()
+    {
+        yield return new WaitForSeconds(delay);
+        stars.IncrementMistakes();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
     public bool GetSuccess()
     {
 

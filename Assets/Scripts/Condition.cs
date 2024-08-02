@@ -13,6 +13,7 @@ public class Condition : MonoBehaviour
 
     public GameObject obj;
     [SerializeField] DestinationTrigger dest;
+    public float delay = 2f;
 
     void Update()
     {
@@ -20,10 +21,16 @@ public class Condition : MonoBehaviour
         if (dest.GetSuccess())
         {
             Debug.Log("Level Complete");
-            ShowStars();
-            sprites.SetActive(false);
-            obj.SetActive(true);
+            StartCoroutine(levelComplete());
         }
+    }
+
+    IEnumerator levelComplete()
+    {
+        yield return new WaitForSeconds(delay);
+        ShowStars();
+        sprites.SetActive(false);
+        obj.SetActive(true);
     }
 
     void ShowStars()
