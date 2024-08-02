@@ -971,6 +971,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1643080474990517932, guid: 4c2ba011821ed7a42abba5302907b9b1, type: 3}
   m_PrefabInstance: {fileID: 1434566473}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1434566475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1643080474990517935, guid: 4c2ba011821ed7a42abba5302907b9b1, type: 3}
+  m_PrefabInstance: {fileID: 1434566473}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e573f07e32a7b064daebba42296cbad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1530371123 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9208837562690784961, guid: 1890cc18a0a06af41956185667d75dc0, type: 3}
@@ -1011,4 +1022,4 @@ MonoBehaviour:
   sprites: {fileID: 406645443}
   obj: {fileID: 1655046833}
   dest: {fileID: 1074677875}
-  dest2: {fileID: 0}
+  dest2: {fileID: 1434566475}

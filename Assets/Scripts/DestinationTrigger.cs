@@ -20,6 +20,7 @@ public class DestinationTrigger : MonoBehaviour
             }
             else
             {
+                Debug.Log(this.tag);
                 stars.IncrementMistakes();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
@@ -33,6 +34,7 @@ public class DestinationTrigger : MonoBehaviour
             }
             else
             {
+                Debug.Log(this.tag);
                 stars.IncrementMistakes();
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }

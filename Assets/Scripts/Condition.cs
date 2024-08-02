@@ -1,54 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Condition : MonoBehaviour
 {
     [SerializeField] GameObject oneStar;
     [SerializeField] GameObject twoStar;
     [SerializeField] GameObject threeStar;
-    [SerializeField] GameObject sprites;
     public Stars stars;
+    [SerializeField] GameObject sprites;
+
     public GameObject obj;
     [SerializeField] DestinationTrigger dest;
 
     void Update()
     {
-
+        // Check if both destinations are successful
         if (dest.GetSuccess())
         {
+            Debug.Log("Level Complete");
             ShowStars();
-
             sprites.SetActive(false);
             obj.SetActive(true);
         }
     }
+
     void ShowStars()
     {
         int number = stars.GetStars();
-        if (number > 1)
-        {
-            if (number == 3)
-            {
-                threeStar.SetActive(true);
-                twoStar.SetActive(false);
-                oneStar.SetActive(false);
+        Debug.Log("Stars: " + number);
 
-            }
-            else
-            {
-                threeStar.SetActive(false);
-                twoStar.SetActive(true);
-                oneStar.SetActive(false);
-            }
-        }
-        else
-        {
-            threeStar.SetActive(false);
-            twoStar.SetActive(false);
-            oneStar.SetActive(true);
-        }
+        oneStar.SetActive(number == 1);
+        twoStar.SetActive(number == 2);
+        threeStar.SetActive(number == 3);
     }
-
 }

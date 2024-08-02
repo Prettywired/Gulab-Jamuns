@@ -21,6 +21,8 @@ public class LevelSelect : MonoBehaviour
      }*/
     public void Levels(int level_num)
     {
+       
         SceneManager.LoadScene(level_num);
+         Stars.ResetMistakes();
     }
 }

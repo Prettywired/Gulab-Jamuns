@@ -60,8 +60,10 @@ public class IngredientScript : MonoBehaviour
     {
         Debug.Log(other.tag);
         this.gameObject.SetActive(false);
-        if (this.CompareTag("Healthy")&&other.CompareTag("Rotten") ||  other.CompareTag("Obstacle"))
+        if (this.CompareTag("Healthy") && other.CompareTag("Rotten") || other.CompareTag("Obstacle"))
         {
+            Debug.Log(this.tag);
+            Debug.Log(other.tag);
             stars.IncrementMistakes();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }

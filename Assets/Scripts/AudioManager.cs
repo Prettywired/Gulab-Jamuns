@@ -42,4 +42,12 @@ public class AudioManager : MonoBehaviour
             musicSource.Play();
         }
     }
+    public void ToggleMusic()
+    {
+        musicSource.mute = !musicSource.mute;
+    }
+    public void ChangeVolume(float volume)
+    {
+        musicSource.volume = volume;
+    }
 }
