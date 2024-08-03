@@ -12,7 +12,7 @@ public class PauseMenuScript : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        // Stars.ResetMistakes();
+        Stars.ResetMistakes();
     }
 
 

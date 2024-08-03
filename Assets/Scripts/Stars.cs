@@ -19,12 +19,12 @@ public class Stars : MonoBehaviour
 {
     public static int mistakes = 0;
 
-    public void IncrementMistakes()
+    public static void IncrementMistakes()
     {
         mistakes++;
     }
 
-    public int GetStars()
+    public static int GetStars()
     {
         if (mistakes == 0)
         {

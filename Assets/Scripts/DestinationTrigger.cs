@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class DestinationTrigger : MonoBehaviour
 {
-    public Stars stars;
+
+    public ParticleSystem successParticles;
+    public ParticleSystem failureParticles;
     bool isSuccess = false;
     float delay = 2f;
     void OnTriggerEnter2D(Collider2D other)
@@ -17,10 +19,12 @@ public class DestinationTrigger : MonoBehaviour
             {
                 Debug.Log("Success");
                 isSuccess = true;
+                successParticles.Play();
             }
             else
             {
-                StartCoroutine(handleNegativeCase());
+                failureParticles.Play();
+                StartCoroutine(HandleNegativeCase());
 
             }
         }
@@ -30,17 +34,20 @@ public class DestinationTrigger : MonoBehaviour
             {
                 isSuccess = true;
                 Debug.Log("Success!");
+                successParticles.Play();
             }
             else
             {
-                StartCoroutine(handleNegativeCase());
+                failureParticles.Play();
+                StartCoroutine(HandleNegativeCase());
             }
         }
     }
-    IEnumerator handleNegativeCase()
+    IEnumerator HandleNegativeCase()
     {
         yield return new WaitForSeconds(delay);
-        stars.IncrementMistakes();
+        failureParticles.Stop();
+        Stars.IncrementMistakes();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public bool GetSuccess()

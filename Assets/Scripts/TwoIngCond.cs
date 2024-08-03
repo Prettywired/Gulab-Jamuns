@@ -9,9 +9,8 @@ public class TwoIngCond : MonoBehaviour
     [SerializeField] GameObject oneStar;
     [SerializeField] GameObject twoStar;
     [SerializeField] GameObject threeStar;
-    public Stars stars;
     [SerializeField] GameObject sprites;
-
+    
     public GameObject obj;
     [SerializeField] DestinationTrigger dest;
     [SerializeField] DestinationTrigger dest2;
@@ -23,10 +22,10 @@ public class TwoIngCond : MonoBehaviour
         if (dest.GetSuccess() && dest2.GetSuccess())
         {
             Debug.Log("Level Complete");
-            StartCoroutine(levelComplete());
+            StartCoroutine(LevelComplete());
         }
     }
-    IEnumerator levelComplete()
+    IEnumerator LevelComplete()
     {
         yield return new WaitForSeconds(delay);
         ShowStars();
@@ -36,7 +35,7 @@ public class TwoIngCond : MonoBehaviour
 
     void ShowStars()
     {
-        int number = stars.GetStars();
+        int number = Stars.GetStars();
         Debug.Log("Stars: " + number);
 
         oneStar.SetActive(number == 1);

@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class IngredientScript : MonoBehaviour
 {
+    public ParticleSystem failureParticles;
     float delay = 2f;
-    public Stars stars;
     public DrawLine line;
     Vector3[] positions;
     bool startMove = false; //this to check if line is drawing rn or not
@@ -60,18 +60,20 @@ public class IngredientScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.tag);
+        failureParticles.Play();
+        this.gameObject.SetActive(false);
         StartCoroutine(HandleTriggerEvent(other));
 
     }
     IEnumerator HandleTriggerEvent(Collider2D other)
     {
         yield return new WaitForSeconds(delay);
-        this.gameObject.SetActive(false);
         if (this.CompareTag("Healthy") && other.CompareTag("Rotten") || other.CompareTag("Obstacle"))
         {
             Debug.Log(this.tag);
             Debug.Log(other.tag);
-            stars.IncrementMistakes();
+            failureParticles.Stop();
+            Stars.IncrementMistakes();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 

@@ -8,7 +8,6 @@ public class Condition : MonoBehaviour
     [SerializeField] GameObject oneStar;
     [SerializeField] GameObject twoStar;
     [SerializeField] GameObject threeStar;
-    public Stars stars;
     [SerializeField] GameObject sprites;
 
     public GameObject obj;
@@ -21,11 +20,11 @@ public class Condition : MonoBehaviour
         if (dest.GetSuccess())
         {
             Debug.Log("Level Complete");
-            StartCoroutine(levelComplete());
+            StartCoroutine(LevelComplete());
         }
     }
 
-    IEnumerator levelComplete()
+    IEnumerator LevelComplete()
     {
         yield return new WaitForSeconds(delay);
         ShowStars();
@@ -35,7 +34,7 @@ public class Condition : MonoBehaviour
 
     void ShowStars()
     {
-        int number = stars.GetStars();
+        int number = Stars.GetStars();
         Debug.Log("Stars: " + number);
 
         oneStar.SetActive(number == 1);
