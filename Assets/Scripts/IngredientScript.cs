@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class IngredientScript : MonoBehaviour
 {
+    public DestinationTrigger dest;
     public ParticleSystem failureParticles;
     float delay = 2f;
     public DrawLine line;
@@ -61,21 +62,21 @@ public class IngredientScript : MonoBehaviour
     {
         Debug.Log(other.tag);
         failureParticles.Play();
+        dest.FailureExplosion(this, other);
         this.gameObject.SetActive(false);
-        StartCoroutine(HandleTriggerEvent(other));
+        // StartCoroutine(HandleTriggerEvent(other));
 
     }
-    IEnumerator HandleTriggerEvent(Collider2D other)
-    {
-        yield return new WaitForSeconds(delay);
-        if (this.CompareTag("Healthy") && other.CompareTag("Rotten") || other.CompareTag("Obstacle"))
-        {
-            Debug.Log(this.tag);
-            Debug.Log(other.tag);
-            failureParticles.Stop();
-            Stars.IncrementMistakes();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+    /* IEnumerator HandleTriggerEvent(Collider2D other)
+     {
+         yield return new WaitForSeconds(delay);
 
-    }
+         {
+             Debug.Log(this.tag);
+             Debug.Log(other.tag);
+             Stars.IncrementMistakes();
+             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         }
+
+     }*/
 }

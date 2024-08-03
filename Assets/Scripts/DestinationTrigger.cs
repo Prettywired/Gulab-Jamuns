@@ -43,10 +43,17 @@ public class DestinationTrigger : MonoBehaviour
             }
         }
     }
+    public void FailureExplosion(IngredientScript collider, Collider2D collider2)
+    {
+        if (collider.CompareTag("Healthy") && collider2.CompareTag("Rotten") || collider2.CompareTag("Obstacle"))
+        {
+            StartCoroutine(HandleNegativeCase());
+        }
+    }
     IEnumerator HandleNegativeCase()
     {
         yield return new WaitForSeconds(delay);
-        failureParticles.Stop();
+
         Stars.IncrementMistakes();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
