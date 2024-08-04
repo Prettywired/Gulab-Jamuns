@@ -17,9 +17,10 @@ public class DestinationTrigger : MonoBehaviour
         {
             if (other.CompareTag("Healthy"))
             {
+                Instantiate(successParticles, this.transform.position, Quaternion.identity);
                 Debug.Log("Success");
                 isSuccess = true;
-               Instantiate(successParticles, this.transform.position, Quaternion.identity);
+
             }
             else
             {
@@ -34,7 +35,7 @@ public class DestinationTrigger : MonoBehaviour
             {
                 isSuccess = true;
                 Debug.Log("Success!");
-                 Instantiate(successParticles, this.transform.position, Quaternion.identity);
+                Instantiate(successParticles, this.transform.position, Quaternion.identity);
             }
             else
             {
