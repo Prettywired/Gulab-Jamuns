@@ -19,11 +19,11 @@ public class DestinationTrigger : MonoBehaviour
             {
                 Debug.Log("Success");
                 isSuccess = true;
-                successParticles.Play();
+               Instantiate(successParticles, this.transform.position, Quaternion.identity);
             }
             else
             {
-                failureParticles.Play();
+                Instantiate(failureParticles, new Vector3(0, 0, 0), Quaternion.identity);
                 StartCoroutine(HandleNegativeCase());
 
             }
@@ -34,11 +34,11 @@ public class DestinationTrigger : MonoBehaviour
             {
                 isSuccess = true;
                 Debug.Log("Success!");
-                successParticles.Play();
+                 Instantiate(successParticles, this.transform.position, Quaternion.identity);
             }
             else
             {
-                failureParticles.Play();
+                Instantiate(failureParticles, new Vector3(0, 0, 0), Quaternion.identity);
                 StartCoroutine(HandleNegativeCase());
             }
         }
@@ -47,6 +47,7 @@ public class DestinationTrigger : MonoBehaviour
     {
         if (collider.CompareTag("Healthy") && collider2.CompareTag("Rotten") || collider2.CompareTag("Obstacle"))
         {
+            Instantiate(failureParticles, new Vector3(0, 0, 0), Quaternion.identity);
             StartCoroutine(HandleNegativeCase());
         }
     }
