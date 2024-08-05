@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Condition : MonoBehaviour
 {
@@ -19,9 +20,19 @@ public class Condition : MonoBehaviour
         // Check if both destinations are successful
         if (dest.GetSuccess())
         {
-            Debug.Log("Level Complete");
+            unlockLevel();
             StartCoroutine(LevelComplete());
         }
+    }
+     public void unlockLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("Reached Index"))
+        {
+            PlayerPrefs.SetInt("Reached Index", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("Unlocked Level", PlayerPrefs.GetInt("Unlocked", 1) + 1);
+            PlayerPrefs.Save();
+        }
+
     }
 
     IEnumerator LevelComplete()
