@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dest: {fileID: 0}
-  failureParticles: {fileID: 9105140266715253832, guid: 000cbf3d7c523bb43b87f632c4934c00, type: 3}
+  failureParticles: {fileID: 6376907390478931156, guid: 4d9e67cf21279704abfa87caa610ac1e, type: 3}
   line: {fileID: 9208837562690784975}
 --- !u!120 &9208837562690784960
 LineRenderer:

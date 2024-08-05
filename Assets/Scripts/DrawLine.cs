@@ -13,6 +13,7 @@ public class DrawLine : MonoBehaviour
 
     void Start()
     {
+
         line = GetComponent<LineRenderer>();
         line.positionCount = 1;
         prevPosition = transform.position;
@@ -30,6 +31,7 @@ public class DrawLine : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            Debug.Log("here");
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             currentPosition.z = 0f;
             if (Vector3.Distance(currentPosition, prevPosition) > minDistance)

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   successParticles: {fileID: 890563975354150565, guid: f662871c82fac1445b0ae8087bdc7441, type: 3}
-  failureParticles: {fileID: 9105140266715253832, guid: 000cbf3d7c523bb43b87f632c4934c00, type: 3}
+  failureParticles: {fileID: 6376907390478931156, guid: 4d9e67cf21279704abfa87caa610ac1e, type: 3}
 --- !u!60 &7411082480304248316
 PolygonCollider2D:
   m_ObjectHideFlags: 0
