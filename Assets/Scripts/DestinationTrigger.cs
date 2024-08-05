@@ -17,10 +17,9 @@ public class DestinationTrigger : MonoBehaviour
         {
             if (other.CompareTag("Healthy"))
             {
-                Instantiate(successParticles, this.transform.position, Quaternion.identity);
+                Instantiate(successParticles, /*this.transform.position*/ new Vector3(0, 0, 0), Quaternion.identity);
                 Debug.Log("Success");
                 isSuccess = true;
-
             }
             else
             {

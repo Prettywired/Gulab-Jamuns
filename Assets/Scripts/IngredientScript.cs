@@ -58,11 +58,15 @@ public class IngredientScript : MonoBehaviour
 
     }
 
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(other.tag);
-        dest.FailureExplosion(this, other);
-        this.gameObject.SetActive(false);
+        if (!other.CompareTag("Untagged"))
+        {
+            Debug.Log(other.tag);
+            dest.FailureExplosion(this, other);
+            this.gameObject.SetActive(false);
+        }
         // StartCoroutine(HandleTriggerEvent(other));
 
     }

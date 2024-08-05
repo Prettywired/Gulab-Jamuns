@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f494e7b58bd9b6e44866f8396d0c1e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dest: {fileID: 0}
   failureParticles: {fileID: 9105140266715253832, guid: 000cbf3d7c523bb43b87f632c4934c00, type: 3}
   line: {fileID: 9208837562690784975}
 --- !u!120 &9208837562690784960
@@ -72,7 +73,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: fab3ddb4e46ff7d4b8787021412f8750, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,22 +117,22 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0, g: 0, b: 0, a: 0}
-      key3: {r: 0, g: 0, b: 0, a: 0}
-      key4: {r: 0, g: 0, b: 0, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
+      key0: {r: 1, g: 0, b: 0, a: 1}
+      key1: {r: 1, g: 0.5105429, b: 0, a: 1}
+      key2: {r: 1, g: 0.9729372, b: 0, a: 0}
+      key3: {r: 0.17304714, g: 1, b: 0.066037595, a: 0}
+      key4: {r: 0, g: 1, b: 0.92770576, a: 0}
+      key5: {r: 0, g: 0.29475164, b: 1, a: 0}
+      key6: {r: 0.7173109, g: 0, b: 1, a: 0}
+      key7: {r: 1, g: 0, b: 0.83930635, a: 0}
       ctime0: 0
-      ctime1: 65535
-      ctime2: 0
-      ctime3: 0
-      ctime4: 0
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
+      ctime1: 9175
+      ctime2: 17964
+      ctime3: 25674
+      ctime4: 34618
+      ctime5: 42174
+      ctime6: 48650
+      ctime7: 56977
       atime0: 0
       atime1: 65535
       atime2: 0
@@ -141,8 +142,8 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
-      m_NumColorKeys: 2
+      m_ColorSpace: 0
+      m_NumColorKeys: 8
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
