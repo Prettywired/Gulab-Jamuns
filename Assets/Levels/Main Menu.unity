@@ -711,6 +711,7 @@ RectTransform:
   m_Children:
   - {fileID: 1791951790}
   - {fileID: 2014099361}
+  - {fileID: 1140431634}
   - {fileID: 1387453412}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1874,7 +1875,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1140431634
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1884,16 +1885,16 @@ RectTransform:
   m_GameObject: {fileID: 1140431633}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 317878991}
   - {fileID: 509066151}
-  m_Father: {fileID: 2014099361}
+  m_Father: {fileID: 470284134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -626.6, y: -1442.2223}
+  m_AnchoredPosition: {x: 0.000061035156, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1321950747
@@ -3192,6 +3193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2014099361}
   - component: {fileID: 2014099362}
+  - component: {fileID: 2014099363}
   m_Layer: 5
   m_Name: Music Controls
   m_TagString: Untagged
@@ -3213,7 +3215,6 @@ RectTransform:
   m_Children:
   - {fileID: 1480237288}
   - {fileID: 1754854373}
-  - {fileID: 1140431634}
   m_Father: {fileID: 470284134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -3234,6 +3235,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music_slider: {fileID: 1480237287}
+--- !u!114 &2014099363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014099360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ee4b04f41b9a14e8b55adac146b384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenu: {fileID: 1140431633}
 --- !u!1 &2076470165
 GameObject:
   m_ObjectHideFlags: 0
