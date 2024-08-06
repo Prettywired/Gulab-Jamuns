@@ -63,7 +63,6 @@ public class IngredientScript : MonoBehaviour
     {
         if (!other.CompareTag("Untagged"))
         {
-            Debug.Log(other.tag);
             dest.FailureExplosion(this, other);
             this.gameObject.SetActive(false);
         }

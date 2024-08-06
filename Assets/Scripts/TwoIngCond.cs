@@ -26,16 +26,30 @@ public class TwoIngCond : MonoBehaviour
             StartCoroutine(LevelComplete());
         }
     }
+
     public void unlockLevel()
     {
-        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("Reached Index"))
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        int reachedIndex = PlayerPrefs.GetInt("Index Reached");
+        int unlockedLevel = PlayerPrefs.GetInt("Unlocked Level", 1);
+        if (currentLevelIndex >= reachedIndex)
         {
-            PlayerPrefs.SetInt("Reached Index", SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.SetInt("Unlocked Level", PlayerPrefs.GetInt("Unlocked", 1) + 1);
-            PlayerPrefs.Save();
-        }
+            if (currentLevelIndex == 9)
+            {
+                Debug.Log("Levels Completed");
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Index Reached", currentLevelIndex + 1);
+                PlayerPrefs.SetInt("Unlocked Level", unlockedLevel + 1);
+                PlayerPrefs.Save();
 
+                Debug.Log("New Reached Index: " + (currentLevelIndex + 1));
+                Debug.Log("New Unlocked Level: " + (unlockedLevel + 1));
+            }
+        }
     }
+
     IEnumerator LevelComplete()
     {
         yield return new WaitForSeconds(delay);

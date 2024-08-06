@@ -18,7 +18,6 @@ public class DestinationTrigger : MonoBehaviour
             if (other.CompareTag("Healthy"))
             {
                 Instantiate(successParticles, new Vector3(0, 0, 0), Quaternion.identity);
-                Debug.Log("Success");
                 isSuccess = true;
             }
             else
@@ -33,7 +32,6 @@ public class DestinationTrigger : MonoBehaviour
             if (other.CompareTag("Rotten"))
             {
                 isSuccess = true;
-                Debug.Log("Success!");
                 Instantiate(successParticles, new Vector3(0, 0, 0), Quaternion.identity);
             }
             else

@@ -31,7 +31,6 @@ public class DrawLine : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            Debug.Log("here");
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             currentPosition.z = 0f;
             if (Vector3.Distance(currentPosition, prevPosition) > minDistance)
