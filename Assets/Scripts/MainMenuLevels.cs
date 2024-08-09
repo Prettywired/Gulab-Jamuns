@@ -11,13 +11,10 @@ public class MainMenuLevels : MonoBehaviour
     {
         ButtonsToArray();
         int unlockedLevel = PlayerPrefs.GetInt("Unlocked Level", 1);
-        Debug.Log("Unlocked Level on Awake: " + unlockedLevel);
-
-        // Set all buttons to non-interactable
+      
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = false;
-            Debug.Log("Button " + i + " set to non-interactable");
         }
 
         // Set buttons up to the unlocked level to be interactable
@@ -26,7 +23,6 @@ public class MainMenuLevels : MonoBehaviour
             if (i < buttons.Length)
             {
                 buttons[i].interactable = true;
-                Debug.Log("Button " + i + " is now interactable");
             }
             else
             {

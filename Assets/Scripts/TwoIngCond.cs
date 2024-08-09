@@ -43,9 +43,6 @@ public class TwoIngCond : MonoBehaviour
                 PlayerPrefs.SetInt("Index Reached", currentLevelIndex + 1);
                 PlayerPrefs.SetInt("Unlocked Level", unlockedLevel + 1);
                 PlayerPrefs.Save();
-
-                Debug.Log("New Reached Index: " + (currentLevelIndex + 1));
-                Debug.Log("New Unlocked Level: " + (unlockedLevel + 1));
             }
         }
     }
@@ -61,7 +58,6 @@ public class TwoIngCond : MonoBehaviour
     void ShowStars()
     {
         int number = Stars.GetStars();
-        Debug.Log("Stars: " + number);
 
         oneStar.SetActive(number == 1);
         twoStar.SetActive(number == 2);

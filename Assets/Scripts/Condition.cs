@@ -41,9 +41,6 @@ public class Condition : MonoBehaviour
                 PlayerPrefs.SetInt("Index Reached", currentLevelIndex + 1);
                 PlayerPrefs.SetInt("Unlocked Level", unlockedLevel + 1);
                 PlayerPrefs.Save();
-
-                Debug.Log("New Reached Index: " + (currentLevelIndex + 1));
-                Debug.Log("New Unlocked Level: " + (unlockedLevel + 1));
             }
         }
     }
