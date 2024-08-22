@@ -28,7 +28,7 @@ public class AdManager : MonoBehaviour
 #else
         string adUnitId = "unexpected_platform";
 #endif
-      
+
         Debug.Log("Creating banner view");
 
         if (_bannerView != null)
@@ -73,6 +73,7 @@ public class AdManager : MonoBehaviour
         // send the request to load the ad.
         Debug.Log("Loading banner ad.");
         _bannerView.LoadAd(adRequest);
+        this.RequestBanner();
     }
 
     //InterstitialAds
@@ -273,6 +274,7 @@ public class AdManager : MonoBehaviour
                 // TODO: Reward the user.
                 Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
             });
+            this.RequestRewarded();
         }
     }
 }
